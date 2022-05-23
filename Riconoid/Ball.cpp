@@ -137,5 +137,10 @@ void Ball::Reset(Riconoid::Vector2 location)
 	ray.length = circleCollider.radius;
 
 	float angle = GetRandomValue(-2.0f, 2.0f);
+
+	// Prevents the ball from going straight up
+	while (angle == 0)
+		angle = GetRandomValue(-2.0f, 2.0f);
+
 	velocity = Riconoid::Vector2(angle, -1).Normalize();
 }

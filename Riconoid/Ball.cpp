@@ -42,8 +42,6 @@ void Ball::Update()
 					// This makes it so the ball adjusts itself a little after bouncing on one of the side walls
 					// The reason for this is to prevent the ball from bouncing tediously if the reflection angle is very small
 
-					GameObject* player = Gameplay::gameObjects.at(0);
-					Riconoid::Vector2 playerPosition = player->position;
 					Riconoid::Vector2 center = { (float)(Gameplay::screenWidth / 2), velocity.y < 0 ? 0.0f : (float)Gameplay::screenHeight };
 					velocity = (reflection + (center - position).Normalize()).Normalize();
 				}
